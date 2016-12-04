@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6367D3B71DE839AC003BAB6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367D3B61DE839AC003BAB6F /* AppDelegate.swift */; };
-		6367D3B91DE839AC003BAB6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367D3B81DE839AC003BAB6F /* ViewController.swift */; };
+		6367D3B91DE839AC003BAB6F /* DefaultRotatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367D3B81DE839AC003BAB6F /* DefaultRotatingViewController.swift */; };
 		6367D3BC1DE839AC003BAB6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6367D3BA1DE839AC003BAB6F /* Main.storyboard */; };
 		6367D3BE1DE839AC003BAB6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6367D3BD1DE839AC003BAB6F /* Assets.xcassets */; };
 		6367D3C11DE839AC003BAB6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6367D3BF1DE839AC003BAB6F /* LaunchScreen.storyboard */; };
@@ -17,12 +17,14 @@
 		639EDF2C1DF1D618006836CD /* CircleIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EDF271DF1D618006836CD /* CircleIconView.swift */; };
 		639EDF2D1DF1D618006836CD /* CircleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EDF281DF1D618006836CD /* CircleOverlayView.swift */; };
 		639EDF2E1DF1D618006836CD /* CircleThumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EDF291DF1D618006836CD /* CircleThumb.swift */; };
+		639EDF301DF1F203006836CD /* DefaultNonRotatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EDF2F1DF1F203006836CD /* DefaultNonRotatingViewController.swift */; };
+		639EDF321DF1F3A8006836CD /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EDF311DF1F3A8006836CD /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6367D3B31DE839AC003BAB6F /* CircleMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6367D3B61DE839AC003BAB6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6367D3B81DE839AC003BAB6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6367D3B81DE839AC003BAB6F /* DefaultRotatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRotatingViewController.swift; sourceTree = "<group>"; };
 		6367D3BB1DE839AC003BAB6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6367D3BD1DE839AC003BAB6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6367D3C01DE839AC003BAB6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		639EDF271DF1D618006836CD /* CircleIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIconView.swift; sourceTree = "<group>"; };
 		639EDF281DF1D618006836CD /* CircleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleOverlayView.swift; sourceTree = "<group>"; };
 		639EDF291DF1D618006836CD /* CircleThumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleThumb.swift; sourceTree = "<group>"; };
+		639EDF2F1DF1F203006836CD /* DefaultNonRotatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNonRotatingViewController.swift; sourceTree = "<group>"; };
+		639EDF311DF1F3A8006836CD /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 			children = (
 				639EDF241DF1D618006836CD /* CircleMenu */,
 				6367D3B61DE839AC003BAB6F /* AppDelegate.swift */,
-				6367D3B81DE839AC003BAB6F /* ViewController.swift */,
+				639EDF311DF1F3A8006836CD /* CustomViewController.swift */,
+				6367D3B81DE839AC003BAB6F /* DefaultRotatingViewController.swift */,
+				639EDF2F1DF1F203006836CD /* DefaultNonRotatingViewController.swift */,
 				6367D3BA1DE839AC003BAB6F /* Main.storyboard */,
 				6367D3BD1DE839AC003BAB6F /* Assets.xcassets */,
 				6367D3BF1DE839AC003BAB6F /* LaunchScreen.storyboard */,
@@ -160,9 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639EDF321DF1F3A8006836CD /* CustomViewController.swift in Sources */,
+				639EDF301DF1F203006836CD /* DefaultNonRotatingViewController.swift in Sources */,
 				639EDF2C1DF1D618006836CD /* CircleIconView.swift in Sources */,
 				639EDF2D1DF1D618006836CD /* CircleOverlayView.swift in Sources */,
-				6367D3B91DE839AC003BAB6F /* ViewController.swift in Sources */,
+				6367D3B91DE839AC003BAB6F /* DefaultRotatingViewController.swift in Sources */,
 				639EDF2B1DF1D618006836CD /* CircleGestureRecognizer.swift in Sources */,
 				6367D3B71DE839AC003BAB6F /* AppDelegate.swift in Sources */,
 				639EDF2E1DF1D618006836CD /* CircleThumb.swift in Sources */,

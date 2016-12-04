@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DefaultRotatingViewController.swift
 //  CircleMenuDemo
 //
 //  Created by Shoaib Ahmed on 11/25/16.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DefaultRotatingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareView()
         prepareDefaultCircleMenu()
-//        prepareNonRotatingCircleMenu()
     }
     
     func prepareView() {
@@ -22,33 +21,30 @@ class ViewController: UIViewController {
     }
     
     func prepareDefaultCircleMenu() {
+        // Create circle
         let circle = Circle(with: CGRect(x: 10, y: 90, width: 300, height: 300), numberOfSegments: 10, ringWidth: 80.0)
+        // Set dataSource and delegate
         circle.dataSource = self
         circle.delegate = self
+        
+        // Position and customize
         circle.center = view.center
-
+        
+        // Create overlay with circle
         let overlay = CircleOverlayView(with: circle)
-
+        
+        // Add to view
         self.view.addSubview(circle)
         self.view.addSubview(overlay!)
     }
-    
-    func prepareNonRotatingCircleMenu() {
-        let circle = Circle(with: CGRect(x: 10, y: 90, width: 300, height: 300), numberOfSegments: 10, ringWidth: 80.0, isRotating: false)
-        circle.dataSource = self
-        circle.delegate = self
-        circle.center = view.center
-        self.view.addSubview(circle)
-    }
-    
 }
 
 
-extension ViewController: CircleDelegate, CircleDataSource {
+extension DefaultRotatingViewController: CircleDelegate, CircleDataSource {
     
     func circle(_ circle: Circle, didMoveTo segment: Int, thumb: CircleThumb) {
         let alert = UIAlertController(title: "Selected", message: "Item with tag: \(segment)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
