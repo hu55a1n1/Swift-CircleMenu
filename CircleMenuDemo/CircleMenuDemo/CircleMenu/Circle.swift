@@ -48,7 +48,7 @@ class Circle: UIView {
     required init(with frame: CGRect, numberOfSegments segments: Int, ringWidth width: CGFloat, isRotating rotate: Bool = true, iconWidth: CGFloat = CircleThumb.kIconViewWidth, iconHeight: CGFloat = 30) {
         self.ringWidth = width
         self.numberOfSegments = segments
-        self.separatorStyle = .basic
+        self.separatorStyle = .none
         self.circleColor = UIColor.clear
         self.isRotate = rotate
         

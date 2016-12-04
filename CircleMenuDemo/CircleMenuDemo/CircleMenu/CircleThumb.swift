@@ -78,7 +78,7 @@ class CircleThumb: UIView {
         numberOfSegments = CGFloat(sNumber)
         sRadius = shortRadius
         lRadius = longRadius
-        separatorStyle = .basic
+        separatorStyle = .none
         isGradientFill = false
         
         super.init(frame: frame!)
