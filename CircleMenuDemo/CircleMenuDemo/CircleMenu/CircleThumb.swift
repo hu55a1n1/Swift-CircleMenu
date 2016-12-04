@@ -25,8 +25,8 @@ class CircleThumb: UIView {
         case horizontal
     }
     
-    let kIconViewWidth: CGFloat =  30
-    let kIconViewHeight: CGFloat = 30
+    static let kIconViewWidth: CGFloat =  30
+    static let kIconViewHeight: CGFloat = 30
     
     private var numberOfSegments: CGFloat
     //    private var bigArcHeight: CGFloat
@@ -47,7 +47,7 @@ class CircleThumb: UIView {
     public var iconView: CircleIconView!
     
     
-    required init(with shortRadius: CGFloat, longRadius: CGFloat, numberOfSegments sNumber: Int) {
+    required init(with shortRadius: CGFloat, longRadius: CGFloat, numberOfSegments sNumber: Int, iconWidth: CGFloat = kIconViewWidth, iconHeight: CGFloat = kIconViewHeight) {
         var frame: CGRect?
         
         var width: CGFloat
@@ -93,7 +93,7 @@ class CircleThumb: UIView {
         self.isGradientFill = true
         self.arcColor = UIColor.green
         self.centerPoint = CGPoint(x: self.bounds.midX, y: y)
-        self.iconView = CircleIconView(frame: CGRect(x: frame!.midX, y: y, width: kIconViewWidth, height: kIconViewHeight))
+        self.iconView = CircleIconView(frame: CGRect(x: frame!.midX, y: y, width: iconWidth, height: iconHeight))
         self.iconView!.center = CGPoint(x: frame!.midX, y: y)
         self.addSubview(self.iconView!)
     }

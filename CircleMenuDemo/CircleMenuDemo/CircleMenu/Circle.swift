@@ -31,7 +31,7 @@ class Circle: UIView {
     public var circle: UIBezierPath?
     public var path: UIBezierPath?
     public var ringWidth: CGFloat
-    public var isOverlayed: Bool = true
+//    public var isOverlayed: Bool = true
     public var isInertiaEffect: Bool = true
     private(set) var isRotate: Bool = true
     public var numberOfSegments: Int
@@ -45,7 +45,7 @@ class Circle: UIView {
     public var dataSource: CircleDataSource?
     
     //Circle radius is equal to rect / 2 , path radius is equal to rect1/2.
-    required init(with frame: CGRect, numberOfSegments segments: Int, ringWidth width: CGFloat, isRotating rotate: Bool = true) {
+    required init(with frame: CGRect, numberOfSegments segments: Int, ringWidth width: CGFloat, isRotating rotate: Bool = true, iconWidth: CGFloat = CircleThumb.kIconViewWidth, iconHeight: CGFloat = 30) {
         self.ringWidth = width
         self.numberOfSegments = segments
         self.separatorStyle = .basic
@@ -60,7 +60,7 @@ class Circle: UIView {
         
         let rect1 = CGRect(x: 0, y: 0, width: frame.height - (2*ringWidth), height: frame.width - (2*ringWidth))
         for _ in 0..<numberOfSegments {
-            let thumb = CircleThumb(with: rect1.size.height/2, longRadius: frame.size.height/2, numberOfSegments: numberOfSegments)
+            let thumb = CircleThumb(with: rect1.size.height/2, longRadius: frame.size.height/2, numberOfSegments: numberOfSegments, iconWidth: iconWidth, iconHeight: iconHeight)
             thumbs.add(thumb)
         }
     }
