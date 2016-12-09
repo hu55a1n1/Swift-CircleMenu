@@ -65,7 +65,7 @@ class DefaultRotatingViewController: UIViewController {
 }
 ```
 
-Then, you need to conform to the `CircleDelegate` and `CircleDataSource` protocols by implementing the `didMoveTo segment:` and `iconForThumbAt row: Int` methods.
+Then, you need to conform to the `CircleDelegate` and `CircleDataSource` protocols by implementing the `didMoveTo segment:` and `iconForThumbAt row:` methods.
 
 ```swift 
 
