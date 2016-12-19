@@ -1,28 +1,22 @@
+/**
+ The MIT License (MIT)
+ Copyright (c) 2016 Shoaib Ahmed / Sufi-Al-Hussaini
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 //
 //  Circle.swift
-//  CircleMenuDemo
+//  CircleMenu
 //
 //  Created by Shoaib Ahmed on 11/25/16.
-//  Copyright © 2016 Kindows Tech Solutions. All rights reserved.
+//  Copyright © 2016 Shoaib Ahmed / Sufi-Al-Hussaini. All rights reserved.
 //
 
 import UIKit
-
-
-protocol CircleDelegate {
-    
-    func circle(_ circle: Circle, didMoveTo segment: Int, thumb: CircleThumb)
-    
-}
-
-
-protocol CircleDataSource {
-    
-    func circle(_ circle: Circle, iconForThumbAt row: Int) -> UIImage
-    
-}
-
-
 
 class Circle: UIView {
     
@@ -37,9 +31,9 @@ class Circle: UIView {
     public var circle: UIBezierPath?
     public var path: UIBezierPath?
     public var ringWidth: CGFloat
-    public var isOverlayed: Bool = true
+//    public var isOverlayed: Bool = true
     public var isInertiaEffect: Bool = true
-    public var isRotate: Bool = true
+    private(set) var isRotate: Bool = true
     public var numberOfSegments: Int
     public var circleColor: UIColor?
     public var separatorColor: UIColor?
@@ -51,11 +45,12 @@ class Circle: UIView {
     public var dataSource: CircleDataSource?
     
     //Circle radius is equal to rect / 2 , path radius is equal to rect1/2.
-    required init(frame: CGRect, numberOfSegments segments: Int, ringWidth width: CGFloat) {
+    required init(with frame: CGRect, numberOfSegments segments: Int, ringWidth width: CGFloat, isRotating rotate: Bool = true, iconWidth: CGFloat = CircleThumb.kIconViewWidth, iconHeight: CGFloat = 30) {
         self.ringWidth = width
         self.numberOfSegments = segments
-        self.separatorStyle = .basic
+        self.separatorStyle = .none
         self.circleColor = UIColor.clear
+        self.isRotate = rotate
         
         super.init(frame: frame)
         
@@ -65,7 +60,7 @@ class Circle: UIView {
         
         let rect1 = CGRect(x: 0, y: 0, width: frame.height - (2*ringWidth), height: frame.width - (2*ringWidth))
         for _ in 0..<numberOfSegments {
-            let thumb = CircleThumb(with: rect1.size.height/2, longRadius: frame.size.height/2, numberOfSegments: numberOfSegments)
+            let thumb = CircleThumb(with: rect1.size.height/2, longRadius: frame.size.height/2, numberOfSegments: numberOfSegments, iconWidth: iconWidth, iconHeight: iconHeight)
             thumbs.add(thumb)
         }
     }
@@ -142,3 +137,21 @@ class Circle: UIView {
         }
     }
 }
+
+
+
+protocol CircleDelegate {
+    
+    func circle(_ circle: Circle, didMoveTo segment: Int, thumb: CircleThumb)
+    
+}
+
+
+protocol CircleDataSource {
+    
+    func circle(_ circle: Circle, iconForThumbAt row: Int) -> UIImage
+    
+}
+
+
+

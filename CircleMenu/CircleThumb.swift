@@ -1,9 +1,19 @@
+/**
+ The MIT License (MIT)
+ Copyright (c) 2016 Shoaib Ahmed / Sufi-Al-Hussaini
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 //
 //  CircleThumb.swift
-//  CircleMenuDemo
+//  CircleMenu
 //
 //  Created by Shoaib Ahmed on 11/25/16.
-//  Copyright © 2016 Kindows Tech Solutions. All rights reserved.
+//  Copyright © 2016 Shoaib Ahmed / Sufi-Al-Hussaini. All rights reserved.
 //
 
 import UIKit
@@ -15,8 +25,8 @@ class CircleThumb: UIView {
         case horizontal
     }
     
-    let kIconViewWidth: CGFloat =  30
-    let kIconViewHeight: CGFloat = 30
+    static let kIconViewWidth: CGFloat =  30
+    static let kIconViewHeight: CGFloat = 30
     
     private var numberOfSegments: CGFloat
     //    private var bigArcHeight: CGFloat
@@ -37,7 +47,7 @@ class CircleThumb: UIView {
     public var iconView: CircleIconView!
     
     
-    required init(with shortRadius: CGFloat, longRadius: CGFloat, numberOfSegments sNumber: Int) {
+    required init(with shortRadius: CGFloat, longRadius: CGFloat, numberOfSegments sNumber: Int, iconWidth: CGFloat = kIconViewWidth, iconHeight: CGFloat = kIconViewHeight) {
         var frame: CGRect?
         
         var width: CGFloat
@@ -68,7 +78,7 @@ class CircleThumb: UIView {
         numberOfSegments = CGFloat(sNumber)
         sRadius = shortRadius
         lRadius = longRadius
-        separatorStyle = .basic
+        separatorStyle = .none
         isGradientFill = false
         
         super.init(frame: frame!)
@@ -83,7 +93,7 @@ class CircleThumb: UIView {
         self.isGradientFill = true
         self.arcColor = UIColor.green
         self.centerPoint = CGPoint(x: self.bounds.midX, y: y)
-        self.iconView = CircleIconView(frame: CGRect(x: frame!.midX, y: y, width: kIconViewWidth, height: kIconViewHeight))
+        self.iconView = CircleIconView(frame: CGRect(x: frame!.midX, y: y, width: iconWidth, height: iconHeight))
         self.iconView!.center = CGPoint(x: frame!.midX, y: y)
         self.addSubview(self.iconView!)
     }
