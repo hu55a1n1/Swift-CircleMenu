@@ -87,6 +87,10 @@ class CircleGestureRecognizer: UIGestureRecognizer {
                     let thumb = thumb as! CircleThumb
                     let touchPoint = touch?.location(in: thumb)
                     if thumb.arc!.cgPath.contains(touchPoint!) {
+                        self.currentThumb?.iconView!.isSelected = false
+                        thumb.iconView!.isSelected = true
+                        self.currentThumb = thumb
+                        
                         view.delegate?.circle(view, didMoveTo: thumb.tag, thumb: thumb)
                     }
                 }
