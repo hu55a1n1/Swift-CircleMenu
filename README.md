@@ -106,7 +106,7 @@ Swift-CircleMenu is licensed under the MIT license.
 For an app I was developing recently, I wanted something like [Android-CircleMenu](https://github.com/szugyi/Android-CircleMenu), i.e. a rotatable circle menu. 
 I came across a number of circle menus for iOS on github, but only one supported rotation with inertia effect - [CDPieMenu](https://github.com/wokalski/CDPieMenu). 
 The problem with CDPieMenu though, is that it is written in Obj-C and isn't being maintained currently.
-So, I decided to rewrite Swift-CircleMenu and include in it all features I required in my app, and make it available publicly.
+So, I decided to rewrite CDPieMenu in swift and include in it all features I required in my app, and make it available publicly.
 
 
 ## Credits
